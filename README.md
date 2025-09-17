@@ -1,36 +1,37 @@
-# MMLA
-collaboration 
-FinMark Data Preprocessing ProjectOverview
-This project is part of a machine learning solution development for FinMark. It focuses on data preprocessing, which is a critical step to ensure the datasets are clean, consistent, and ready for model training.
-The datasets used are:
-customer_demographics_contaminated.csv
-customer_transactions_contaminated.csv
-social_media_interactions_contaminated.csv
-Objectives
-Understand the structure and quality of the datasets.
-Remove duplicate entries.
-Identify and handle missing values using MCAR and MNAR strategies.
-Format and standardize data types.
-Encode categorical variables for machine learning compatibility.
-Normalize numerical features to improve model performance.
-Save cleaned datasets for further analysis and modeling.
-Files
-FinMark_Data_Preprocessing.ipynb: Jupyter notebook containing all preprocessing steps.
-customer_demographics_cleaned.csv: Cleaned version of the customer demographics dataset.
-customer_transactions_cleaned.csv: Cleaned version of the transactions dataset.
-social_media_interactions_cleaned.csv: Cleaned version of the social media interactions dataset.
-How to Use
-Open the notebook FinMark_Data_Preprocessing.ipynb in Jupyter.
-Ensure the contaminated CSV files are located in the folder:
-C:\Users\Buboy
-Run each cell sequentially to:
-Load and inspect the data
-Clean and transform the datasets
-Save the cleaned versions
-Requirements
-Python 3.8+
-Libraries:
-pandas
-numpy
-matplotlib
-scikit-learn
+# MMLA TEAM 4
+Homework: Data Preprocessing of Machine Learning Solution Project Dataset (Submission)
+This project contains a Python script for a data preprocessing pipeline. The script addresses data quality issues and inconsistencies, as identified in our Week 2 analysis, to produce a finalized, clean, and reliable dataset ready for the Milestone 1 analysis.
+
+⚙️ How to Use
+Place Datasets: Ensure the three contaminated datasets (customer_demographics_contaminated.csv, social_media_interactions_contaminated.csv, and customer_transactions_contaminated.csv) are located in the specified directory: C:\Users\Buboy\Downloads\.
+
+Install Dependencies: Install the necessary libraries using pip:
+
+Bash
+
+pip install pandas numpy matplotlib seaborn scikit-learn scipy
+Run the Notebook: Execute the Python script within a Jupyter Notebook. The code will perform all preprocessing steps automatically.
+
+✨ Preprocessing Techniques Applied
+Following the issues identified in Week 2, the pipeline applies the following data preprocessing techniques using pandas:
+
+Merging: All three datasets are merged into a single DataFrame based on the CustomerID column.
+
+Missing Values:
+
+Visualization: A missing values heatmap is generated and saved as missing_values_heatmap.png.
+
+Imputation: Missing categorical values are filled with the mode, while missing numeric values are filled with the median.
+
+Outliers: Extreme numeric outliers are capped using the Interquartile Range (IQR) method to produce more robust data.
+
+Duplicates: Duplicate rows are removed to ensure each record is unique.
+
+Data Type Conversion: Columns containing dates are converted to the correct datetime format.
+
+Encoding: Categorical variables are converted into a numeric format suitable for machine learning models.
+
+💾 Output and Submission
+Upon completion, the script will save the following preprocessed dataset in the same directory:
+
+cleaned_merged_data.csv
